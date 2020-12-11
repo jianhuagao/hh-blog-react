@@ -1,5 +1,5 @@
 import React, { memo, Suspense } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import TopMenu from "./components/top-menu";
 import { router } from "./router";
@@ -7,7 +7,7 @@ import SkeletonComp from "@c/skeleton";
 
 export default memo(function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div
         className="home-page-wrapper"
         style={{ position: "fixed", zIndex: "100" }}
@@ -19,6 +19,6 @@ export default memo(function App() {
       <div className="home-page-wrapper">
         <Suspense fallback={<SkeletonComp />}>{renderRoutes(router)}</Suspense>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 });
