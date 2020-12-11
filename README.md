@@ -1,6 +1,7 @@
 ## (项目才写两天,算是初结构刚刚搭起，后续会尽快完善，包括网络请求等等)
-![Image text](https://www.codewars.com/users/jianhuagao/badges/large)  
 ![Image text](https://i.bmp.ovh/imgs/2020/12/d0451c81dbfc1979.png)  
+![Image text](https://i.bmp.ovh/imgs/2020/12/2ed919f4afee7d35.png)  
+![Image text](https://i.bmp.ovh/imgs/2020/12/8b70a5b0557757e1.png)  
 # 使用方法
 1.在根目录 `yarn install` or  `npm install`.\
 2.执行  `yarn start` or  `npm run start`
