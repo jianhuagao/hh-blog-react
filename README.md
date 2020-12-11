@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# 使用方法
+1.在根目录yarn install 或者 npm install
+2.yarn start 或者 npm run start
+
+# TODO:
+1.顶部栏滑动后模糊状态（周一实现）
+
+# Getting Started with Create React App(react官方说明)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
