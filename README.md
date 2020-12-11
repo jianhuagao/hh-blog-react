@@ -1,6 +1,10 @@
 # 使用方法
-1.在根目录yarn install 或者 npm install
-2.yarn start 或者 npm run start
+1.在根目录yarn install 或者 npm install.\
+2.yarn start 或者 npm run start.\
+
+# 技术栈
+1.react+redux+styled-components.\
+2.UI：antd+自己封装.\
 
 # TODO:
 1.顶部栏滑动后模糊状态（周一实现）
