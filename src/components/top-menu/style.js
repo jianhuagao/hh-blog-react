@@ -25,8 +25,11 @@ export const PageWrap = styled.div`
   
   //重写menu
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected{
-      color: #9fbfff !important;
-      border-bottom: 2px solid #9fbfff !important;
+      color: ${props => props.page === "/Blog" && "#9fbfff !important"};
+      border-bottom:${props => props.page === "/Blog" && "2px solid #9fbfff !important"}; 
+      a{
+        color:${props => props.page === "/Blog" || "#3d6fd3 !important"};
+      }
     }
   .ant-menu{
     color: ${props => props.page === "/Blog" ? "white !important" : "black !important"};
