@@ -3,8 +3,33 @@
 2.yarn start 或者 npm run start
 
 # 技术栈
-1.react+redux+styled-components.\
-2.UI：antd+自己封装
+CSS使用Flex进行布局.\
+配置路径别名使用: carco.\
+项目路由使用: react-router来管理.\
+使用react-router-config集中式路径映射表管理.\
+使用styled-components+普通的css编写样式.\
+使用axios发送网络请求.\
+项目全面拥抱React Hooks.\
+项目组件库使用: ant design.\
+使用immutable对项目reducer中state进行管理.\
+使用redux-immtable对根目录reducer中state进行管理.\
+项目使用redux-thunk中间件.\
+使用propType校验props类型及默认值.\
+使用motion.ant.design添加过渡动画效果.\
+项目中的优化: 函数式组件全部采用memo、路由懒加载、函数防抖
+# 文件目录
+│─src.\
+  ├─assets 存放公共资源css和图片.\
+    ├─css  全局css.\
+    ├─img  .\
+  ├─common  公共的一些常量.\
+  ├─components 公共组件.\
+  ├─pages   路由映射组件.\
+  ├─router  前端路由配置.\
+  ├─service 网络配置和请求.\
+  └─store   全局的store配置.\
+  └─utils   工具函数.\
+  └─hooks   自定义hook
 
 # TODO:
 1.顶部栏滑动后模糊状态（周一实现）
