@@ -3,9 +3,9 @@
 2.yarn start 或者 npm run start
 
 # 技术栈
-CSS使用Flex进行布局.\
+使用Flex进行布局.\
 配置路径别名使用: carco.\
-项目路由使用: react-router来管理.\
+路由使用react-router来管理.\
 使用react-router-config集中式路径映射表管理.\
 使用styled-components+普通的css编写样式.\
 使用axios发送网络请求.\
@@ -19,17 +19,17 @@ CSS使用Flex进行布局.\
 项目中的优化: 函数式组件全部采用memo、路由懒加载、函数防抖
 # 文件目录
 │─src.\
-  ├─assets 存放公共资源css和图片.\
+  ├─assets 公共资源css和图片.\
     ├─css  全局css.\
-    ├─img  .\
-  ├─common  公共的一些常量.\
+    ├─img   图片.\
+  ├─common  公共常量以及模拟数据.\
   ├─components 公共组件.\
-  ├─pages   路由映射组件.\
-  ├─router  前端路由配置.\
+  ├─pages   页面.\
+  ├─router  路由配置.\
   ├─service 网络配置和请求.\
   └─store   全局的store配置.\
-  └─utils   工具函数.\
-  └─hooks   自定义hook
+  └─utils   工具.\
+  └─hooks   自定义hooks
 
 # TODO:
 1.顶部栏滑动后模糊状态（周一实现）
