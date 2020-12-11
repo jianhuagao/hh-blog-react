@@ -1,4 +1,42 @@
-# Getting Started with Create React App
+## (项目才写两天,算是初结构刚刚搭起，后续会尽快完善，包括网络请求等等)
+![Image text](https://i.bmp.ovh/imgs/2020/12/d0451c81dbfc1979.png)  
+# 使用方法
+1.在根目录 `yarn install` or  `npm install`\
+2.执行  `yarn start` or  `npm run start`
+
+# 技术栈
+使用Flex进行布局.\
+配置路径别名使用: carco.\
+路由使用react-router来管理.\
+使用react-router-config集中式路径映射表管理.\
+使用styled-components+普通的css编写样式.\
+使用axios发送网络请求.\
+项目全面拥抱React Hooks.\
+项目组件库使用: ant design.\
+使用immutable对项目reducer中state进行管理.\
+使用redux-immtable对根目录reducer中state进行管理.\
+项目使用redux-thunk中间件.\
+使用propType校验props类型及默认值.\
+使用motion.ant.design添加过渡动画效果.\
+项目中的优化: 函数式组件全部采用memo、路由懒加载、函数防抖
+# 文件目录
+│─src.\
+  ├─assets 公共资源css和图片.\
+    ├─css  全局css.\
+    ├─img   图片.\
+  ├─common  公共常量以及模拟数据.\
+  ├─components 公共组件.\
+  ├─pages   页面.\
+  ├─router  路由配置.\
+  ├─service 网络配置和请求.\
+  └─store   全局的store配置.\
+  └─utils   工具.\
+  └─hooks   自定义hooks
+
+# TODO:
+1.顶部栏滑动后模糊状态（周一实现）
+
+# Getting Started with Create React App(react官方说明)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
