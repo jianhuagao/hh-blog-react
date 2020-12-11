@@ -1,7 +1,7 @@
 ## (项目才写两天,算是初结构刚刚搭起，后续会尽快完善，包括网络请求等等)
 # 使用方法
-1.在根目录yarn install 或者 npm install.\
-2.yarn start 或者 npm run start
+1.在根目录 `yarn install` or  `npm install`.\
+2.执行  `yarn start` or  `npm run start`
 
 # 技术栈
 使用Flex进行布局.\
