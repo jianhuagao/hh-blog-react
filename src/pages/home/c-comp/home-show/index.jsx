@@ -1,4 +1,4 @@
-import React, { memo, useRef } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { Typography, Carousel, Avatar, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
@@ -9,6 +9,7 @@ const { Title } = Typography;
 
 export default memo(function HomeShow() {
   //hooks
+  const [typeNum, setTypeNum] = useState(5);
   const CarouselRef = useRef();
   const avatarSize = {
     xs: 60,
@@ -18,9 +19,12 @@ export default memo(function HomeShow() {
     xl: 100,
     xxl: 110,
   };
+  useEffect(() => {
+    window.innerWidth < 620 && setTypeNum(4);
+  }, []);
 
-  const pagesNum = TechnologyStack.length % 6;
-  const pArr = Array.from(new Array(pagesNum + 1).keys()).slice(0);
+  const pagesNum = Math.ceil(TechnologyStack.length / typeNum);
+  const pArr = Array.from(new Array(pagesNum).keys()).slice(0);
   //TODO:当前有个关于ref的Warning未解决
   return (
     <PageWrap>
@@ -50,18 +54,19 @@ export default memo(function HomeShow() {
             return (
               <QueueAnim key={index}>
                 <div key={index} className="carouselItem">
-                  {TechnologyStack.slice(index * 5, (index + 1) * 5).map(
-                    (item2, index2) => {
-                      return (
-                        <Avatar
-                          key={index2}
-                          className="avatarItem icon_sprite"
-                          style={{ backgroundPosition: item2.imgUrl }}
-                          size={avatarSize}
-                        />
-                      );
-                    }
-                  )}
+                  {TechnologyStack.slice(
+                    index * typeNum,
+                    (index + 1) * typeNum
+                  ).map((item2, index2) => {
+                    return (
+                      <Avatar
+                        key={index2}
+                        className="avatarItem icon_sprite"
+                        style={{ backgroundPosition: item2.imgUrl }}
+                        size={avatarSize}
+                      />
+                    );
+                  })}
                 </div>
               </QueueAnim>
             );

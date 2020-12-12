@@ -23,7 +23,7 @@ export default memo(function TopMenu() {
   }, [location]);
   return (
     <PageWrap page={location.pathname}>
-      <QueueAnim className="content">
+      <QueueAnim className="content page">
         <div key="left" className="c_left">
           <Avatar
             size={44}
@@ -54,7 +54,7 @@ export default memo(function TopMenu() {
             <Button
               shape="circle"
               icon={<GithubOutlined />}
-              href="https://github.com/jianhuagao"
+              href="https://github.com/jianhuagao/hh-blog-react"
             />
           </div>
         </div>
