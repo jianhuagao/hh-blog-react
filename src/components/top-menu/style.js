@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+//TODO:mix-blend-mode: difference属性可以反转文字颜色，这样就不用传参数来显示文字颜色了，待完成...
 export const PageWrap = styled.div`
   color: ${props => props.page === "/Blog" ? "white" : "black"};
   width: 100%;
