@@ -5,8 +5,8 @@
 1.博客前端展示（React+antd）\
 2.后台数据管理系统（Vue3+element(vuetify)）\
 3.后端接口（nodejs）\
-4.微信小程序
-大概在2月底左右完成大部分吧，届时会全部开源上传
+4.微信小程序\
+### 大概在2月底左右完成大部分吧，届时会全部开源上传
 # 使用方法
 1.在根目录 `yarn install` or  `npm install`\
 2.执行  `yarn start` or  `npm run start`
