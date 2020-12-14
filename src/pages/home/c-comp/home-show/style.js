@@ -36,6 +36,8 @@ export const PageWrap = styled.div`
     }
     .avatarItem{
       background-color:white;
+      cursor: pointer;
+      position:relative;
     }
   }
 `

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useRef, useState, useEffect } from "react";
 import { Typography, Carousel, Avatar, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
@@ -62,7 +62,9 @@ export default memo(function HomeShow() {
                       <Avatar
                         key={index2}
                         className="avatarItem icon_sprite"
-                        style={{ backgroundPosition: item2.imgUrl }}
+                        style={{
+                          backgroundPosition: item2.imgUrl,
+                        }}
                         size={avatarSize}
                       />
                     );

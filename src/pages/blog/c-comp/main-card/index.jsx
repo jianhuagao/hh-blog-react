@@ -1,9 +1,29 @@
 import React, { memo } from "react";
 import { PageWrap } from "./style";
-import { Card, Result } from "antd";
-import { SmileOutlined } from "@ant-design/icons";
+import { Card } from "antd";
 import QueueAnim from "rc-queue-anim";
-import ColorWindow from "@c/color-window";
+import CoverCard from "@c/cover-card";
+import CoverType from "@c/cover-type";
+import { BlogData } from "@/common/virtual-data";
+import { TypeDetails } from "@/common/virtual-data";
+//   type: "Dart",
+//   Introduction: "Dart是谷歌开发的计算机编程语言",
+//   apiUrl: "",
+//   website: "",
+//   company: "Google",
+//   protocol: "BSD",
+//   version: "2.2.0",
+//   download: "下载",
+//   system: "跨平台",
+const {
+  type,
+  Introduction,
+  company,
+  protocol,
+  version,
+  download,
+  system,
+} = TypeDetails[0];
 export default memo(function Blog() {
   return (
     <PageWrap className="page">
@@ -16,43 +36,29 @@ export default memo(function Blog() {
         ]}
       >
         <Card key="mainCard" className="contentCard">
-          <Result
-            icon={<SmileOutlined />}
-            title="欢迎来到我的博客，网站建设中暂无更多内容 :)"
-          />
-          <ColorWindow></ColorWindow>
-          <br />
-          <ColorWindow>测试返回顶部按钮,请继续往下滑...</ColorWindow>
-          <br />
-          <ColorWindow>
-            <ul>
-              <li>继续</li>
-              <li>继续</li>
-              <li>继续</li>
-              <li>继续</li>
-              <li>继续</li>
-              <li>继续</li>
-              <li>继续</li>
-            </ul>
-          </ColorWindow>
-          <br />
-          <ColorWindow>手机端应该差不多出来了，pc估计还得继续滑</ColorWindow>
-          <br />
-          <ColorWindow>
-            <ul>
-              <li>PC继续</li>
-              <li>PC继续</li>
-              <li>PC继续</li>
-              <li>PC继续</li>
-              <li>PC继续</li>
-              <li>PC继续</li>
-              <li>PC继续</li>
-            </ul>
-          </ColorWindow>
-          <br />
-          <ColorWindow style={{ textAlign: "right" }}>
-            应该差不多出来了，在这里是不是↘
-          </ColorWindow>
+          <div className="contentCardChi">
+            <CoverType
+              key="1"
+              type={type}
+              Introduction={Introduction}
+              company={company}
+              protocol={protocol}
+              version={version}
+              download={download}
+              system={system}
+            />
+            {BlogData.map((item, index) => {
+              return (
+                <CoverCard
+                  key={item.title + index}
+                  title={item.title}
+                  dateTime={item.dateTime}
+                  content={item.content}
+                  imgUrl={item.imgUrl}
+                />
+              );
+            })}
+          </div>
         </Card>
       </QueueAnim>
     </PageWrap>
