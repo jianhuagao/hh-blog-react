@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const PageWrap = styled.div`
-  margin:5px;
+  background-color:white;
+  margin:${props => props.margin || "5px"};
   border-radius:7px;
   -webkit-box-shadow: 0px 11px 20px rgba(100,100,136,0.15);
   box-shadow: 0px 11px 20px rgba(100,100,136,0.15);
@@ -26,6 +27,6 @@ export const PageWrap = styled.div`
   }
 
   .color-window-content{
-    padding:5px;
+    padding:${props => props.padding || "5px"};
   }
 `

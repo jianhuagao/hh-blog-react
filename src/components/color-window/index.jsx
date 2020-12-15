@@ -9,7 +9,7 @@ export default memo(function ColorWindows(props) {
   and its properties and usage are the same as div. When you see this dialog, 
   it means you haven't passed the child element.`;
   return (
-    <PageWrap>
+    <PageWrap padding={props.padding} margin={props.margin}>
       <div className="color-window-top"></div>
       <div className="color-window-content" {...props}>
         {props.children || detail}

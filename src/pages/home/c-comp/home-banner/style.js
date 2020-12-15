@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const PageWrap = styled.div`
-  padding-top:100px;
     .page{
       display:flex;
       flex-wrap:wrap;

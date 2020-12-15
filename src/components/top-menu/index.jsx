@@ -1,7 +1,6 @@
 import React, { memo, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, Avatar, Divider, Button } from "antd";
-import QueueAnim from "rc-queue-anim";
 import {
   HomeOutlined,
   GiftOutlined,
@@ -23,7 +22,7 @@ export default memo(function TopMenu() {
   }, [location]);
   return (
     <PageWrap page={location.pathname}>
-      <QueueAnim className="content page">
+      <div className="content page">
         <div key="left" className="c_left">
           <Avatar
             size={44}
@@ -58,7 +57,7 @@ export default memo(function TopMenu() {
             />
           </div>
         </div>
-      </QueueAnim>
+      </div>
     </PageWrap>
   );
 });

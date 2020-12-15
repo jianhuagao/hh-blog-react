@@ -1,16 +1,16 @@
 import React, { memo } from "react";
 import { PageWrap } from "./style";
 import HomeBanner from "./c-comp/home-banner";
-import HomeShow from "./c-comp/home-show";
+import HomeSecond from "./c-comp/home-second";
 
 export default memo(function HomePage() {
   return (
     <PageWrap>
-      <div className="home-page-wrapper cpm">
+      <div className="home-page-wrapper cpm1">
         <HomeBanner />
       </div>
-      <div className="home-page-wrapper cpm">
-        <HomeShow />
+      <div className="home-page-wrapper cpm2">
+        <HomeSecond />
       </div>
       <div className="home-page-wrapper cpm">
         <div className="page"></div>

@@ -1,15 +1,17 @@
 import React, { memo, useRef, useState, useEffect } from "react";
-import { Typography, Carousel, Avatar, Button } from "antd";
+import { Typography, Carousel, Avatar, Button, Tag } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
 import { PageWrap } from "./style";
 import { TechnologyStack } from "@/common/virtual-data";
 
 const { Title } = Typography;
+const { CheckableTag } = Tag;
 
 export default memo(function HomeShow() {
   //hooks
   const [typeNum, setTypeNum] = useState(5);
+  const [selectType, setSelectType] = useState("Dart");
   const CarouselRef = useRef();
   const avatarSize = {
     xs: 60,
@@ -59,14 +61,30 @@ export default memo(function HomeShow() {
                     (index + 1) * typeNum
                   ).map((item2, index2) => {
                     return (
-                      <Avatar
-                        key={index2}
-                        className="avatarItem icon_sprite"
-                        style={{
-                          backgroundPosition: item2.imgUrl,
-                        }}
-                        size={avatarSize}
-                      />
+                      <div key={index2}>
+                        <Avatar
+                          className="avatarItem icon_sprite"
+                          onClick={() => {
+                            setSelectType(item2.title);
+                          }}
+                          style={{
+                            backgroundPosition: item2.imgUrl,
+                          }}
+                          size={avatarSize}
+                        />
+                        <div>
+                          <CheckableTag
+                            style={{
+                              color: "white",
+                              fontSize: "17px",
+                              marginTop: "5px",
+                            }}
+                            checked={selectType === item2.title}
+                          >
+                            {item2.title}
+                          </CheckableTag>
+                        </div>
+                      </div>
                     );
                   })}
                 </div>

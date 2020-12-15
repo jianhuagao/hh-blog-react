@@ -10,7 +10,7 @@ export default memo(function index() {
     <PageWrap>
       <QueueAnim
         className="page"
-        duration="1000"
+        duration="500"
         animConfig={[
           { opacity: [1, 0], translateY: [0, 50] },
           { opacity: [1, 0], translateY: [0, -50] },
