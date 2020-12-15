@@ -40,9 +40,6 @@
   └─utils   工具\
   └─hooks   自定义hooks
 
-# TODO:
-1.顶部栏滑动后模糊状态（周一实现）
-
 # Getting Started with Create React App(react官方说明)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
