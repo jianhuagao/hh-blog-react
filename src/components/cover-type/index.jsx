@@ -26,26 +26,24 @@ export default memo(function CoverType(props) {
   }, []);
   return (
     <PageWrap>
-      <div className="site-page-header-ghost-wrapper">
-        <PageHeader
-          title={type}
-          subTitle={Introduction}
-          extra={[
-            <Button key="2">api</Button>,
-            <Button key="1" type="primary">
-              官网
-            </Button>,
-          ]}
-        >
-          <Descriptions size="small" column={columnNum}>
-            <Descriptions.Item label="公司">{company}</Descriptions.Item>
-            <Descriptions.Item label="开源协议">{protocol}</Descriptions.Item>
-            <Descriptions.Item label="最新版本">{version}</Descriptions.Item>
-            <Descriptions.Item label="安装使用">{download}</Descriptions.Item>
-            <Descriptions.Item label="操作系统">{system}</Descriptions.Item>
-          </Descriptions>
-        </PageHeader>
-      </div>
+      <PageHeader
+        title={type}
+        subTitle={Introduction}
+        extra={[
+          <Button key="2">api</Button>,
+          <Button key="1" type="primary">
+            官网
+          </Button>,
+        ]}
+      >
+        <Descriptions size="small" column={columnNum}>
+          <Descriptions.Item label="公司">{company}</Descriptions.Item>
+          <Descriptions.Item label="开源协议">{protocol}</Descriptions.Item>
+          <Descriptions.Item label="最新版本">{version}</Descriptions.Item>
+          <Descriptions.Item label="安装使用">{download}</Descriptions.Item>
+          <Descriptions.Item label="操作系统">{system}</Descriptions.Item>
+        </Descriptions>
+      </PageHeader>
     </PageWrap>
   );
 });

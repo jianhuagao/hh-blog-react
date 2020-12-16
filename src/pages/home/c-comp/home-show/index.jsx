@@ -63,7 +63,11 @@ export default memo(function HomeShow() {
                     return (
                       <div key={index2}>
                         <Avatar
-                          className="avatarItem icon_sprite"
+                          className={{
+                            avatarItem: true,
+                            icon_sprite: true,
+                            // avatarItemSelect: selectType === item2.title,
+                          }}
                           onClick={() => {
                             setSelectType(item2.title);
                           }}

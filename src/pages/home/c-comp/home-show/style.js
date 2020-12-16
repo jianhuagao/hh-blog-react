@@ -39,5 +39,14 @@ export const PageWrap = styled.div`
       cursor: pointer;
       position:relative;
     }
+    .avatarItemSelect:before{
+      position: absolute;
+      bottom: 0;
+      left: 0px;
+      right: 0px;
+      background:url(${require("@/assets/img/avatarbg.png").default})  no-repeat ;
+      content:"";height: 100%;
+      background-size: auto 100%;
+    }
   }
 `

@@ -34,7 +34,11 @@ export default memo(function TopMenu() {
         </div>
         <div key="right" className="c_right">
           <div>
-            <Menu mode="horizontal" defaultSelectedKeys={selectKeys}>
+            <Menu
+              mode="horizontal"
+              defaultSelectedKeys={selectKeys}
+              selectedKeys={selectKeys}
+            >
               <Menu.Item key="/Home" icon={<HomeOutlined />}>
                 <Link to="/Home">Home</Link>
               </Menu.Item>

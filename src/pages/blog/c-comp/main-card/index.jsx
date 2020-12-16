@@ -47,6 +47,7 @@ export default memo(function Blog() {
               download={download}
               system={system}
             />
+            <br />
             {BlogData.map((item, index) => {
               return (
                 <CoverCard
