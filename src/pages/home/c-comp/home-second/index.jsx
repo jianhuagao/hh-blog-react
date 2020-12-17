@@ -1,41 +1,42 @@
 import React, { memo } from "react";
 import QueueAnim from "rc-queue-anim";
-import ColorWindow from "@c/color-window";
-import { Controlled as CodeMirror } from "react-codemirror2";
+import { Typography } from "antd";
 import { PageWrap } from "./style";
-require("codemirror/lib/codemirror.css");
-require("codemirror/theme/material.css");
-require("codemirror/mode/javascript/javascript.js");
+
+const { Title, Text } = Typography;
 
 export default memo(function index() {
-  const jscode = `class HelloMessage extends React.Component {
-    render() {
-      return (
-        <div>
-          Hello {this.props.name}
-        </div>
-      );
-    }
-  }
-  
-  ReactDOM.render(
-    <HelloMessage name="Taylor" />,
-    document.getElementById('hello-example')
-  );`;
-
   return (
     <PageWrap>
-      <QueueAnim className="page" duration="1000">
-        <ColorWindow key="ColorWindow" padding="0px" margin="25px 5px">
-          <CodeMirror
-            value={jscode}
-            options={{
-              mode: "javascript",
-              theme: "material",
-              lineNumbers: true,
-            }}
-          />
-        </ColorWindow>
+      <QueueAnim className="page midCardContent" duration="1000">
+        <div className="midCard">
+          <div className="top">
+            <Title level={4}>原创</Title>
+            <Text type="secondary">Original Blog</Text>
+          </div>
+          <div className="button"></div>
+        </div>
+        <div className="midCard">
+          <div className="top">
+            <Title level={4}>转载</Title>
+            <Text type="secondary">Reprinted blog</Text>
+          </div>
+          <div className="button"></div>
+        </div>
+        <div className="midCard">
+          <div className="top">
+            <Title level={4}>资源</Title>
+            <Text type="secondary">Resources</Text>
+          </div>
+          <div className="button"></div>
+        </div>
+        <div className="midCard">
+          <div className="top">
+            <Title level={4}>生活</Title>
+            <Text type="secondary">Life</Text>
+          </div>
+          <div className="button"></div>
+        </div>
       </QueueAnim>
     </PageWrap>
   );

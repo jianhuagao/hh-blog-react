@@ -49,7 +49,7 @@ export const TechnologyStack = [
   },
   {
     id: 7,
-    title: "nodeJs",
+    title: "node",
     detail: "",
     imgUrl: "-1% 33%",
     pageUrl: "",
@@ -65,7 +65,7 @@ export const TechnologyStack = [
   },
   {
     id: 9,
-    title: "JavaScript",
+    title: "Js",
     detail: "",
     imgUrl: "40% 33%",
     pageUrl: "",
@@ -115,14 +115,14 @@ export const TechnologyStack = [
     state: 1
   }, {
     id: 16,
-    title: "TypeScript",
+    title: "Ts",
     detail: "",
     imgUrl: "59.5% 67%",
     pageUrl: "",
     state: 1
   }, {
     id: 17,
-    title: "VisualStudio",
+    title: "VS",
     detail: "",
     imgUrl: "80.5% 67%",
     pageUrl: "",
@@ -145,14 +145,14 @@ export const TechnologyStack = [
   },
   {
     id: 20,
-    title: "WeChatApp",
+    title: "WeChat",
     detail: "",
     imgUrl: "19.5% 100.5%",
     pageUrl: "",
     state: 1
   }, {
     id: 21,
-    title: "VueJs",
+    title: "Vue",
     detail: "",
     imgUrl: "39.5% 99%",
     pageUrl: "",

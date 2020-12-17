@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="1450px" viewBox="0 0 1440 1450" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>底图</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="46.5485594%" y1="104.55521%" x2="65.5651577%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#01028B" offset="0%"></stop>
+            <stop stop-color="#0529A7" offset="43.0834724%"></stop>
+            <stop stop-color="#0458C3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="15.1178323%" y1="118.375474%" x2="100%" y2="-3.0920793%" id="linearGradient-2">
+            <stop stop-color="#3B20C3" offset="0%"></stop>
+            <stop stop-color="#287CD1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="门户" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -1650.000000)">
+        <g id="简单可靠的技术" transform="translate(0.000000, 1650.000000)">
+            <g id="底图">
+                <path d="M-9.41433431e-14,62 C224,144.666667 464,144.666667 720,62 C975.999999,-20.6666667 1216,-20.6666667 1440,62 L1440,1450 L-7.39313969e-07,1450 L-9.41433431e-14,62 Z" id="Rectangle-20" fill="url(#linearGradient-1)"></path>
+                <path d="M7.39313883e-07,62 C224.000001,144.666667 464.000001,144.666667 720,62 C976,-20.6666667 1216,-20.6666667 1440,62 L1440,1450 L0,1450 L7.39313883e-07,62 Z" id="Rectangle-20" fill="url(#linearGradient-2)" opacity="0.35" transform="translate(720.000000, 725.000000) scale(-1, 1) translate(-720.000000, -725.000000) "></path>
+                <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" cx="510" cy="348" r="2"></circle>
+                <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" cx="431" cy="273" r="2"></circle>
+                <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" cx="951" cy="273" r="2"></circle>
+                <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" cx="1021" cy="343" r="2"></circle>
+                <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" cx="1201" cy="243" r="2"></circle>
+                <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" cx="1416" cy="212" r="2"></circle>
+                <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" cx="1320" cy="371" r="2"></circle>
+                <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" cx="75" cy="222" r="2"></circle>
+                <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" cx="235" cy="322" r="2"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
