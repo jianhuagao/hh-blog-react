@@ -1,3 +1,4 @@
+#Happy hacking Blog
 [预览地址](http://106.12.106.155:81/)
 ![预览图1](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/3F05A8F47FB04A14A8888B16E603022E/385)
 ![预览图2](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/7E105DE428A743C28967B42D815137B6/390)
@@ -8,7 +9,6 @@
 2.后台数据管理系统（Vue3+element(vuetify)）\
 3.后端接口（nodejs）\
 4.微信小程序
-### 大概在2月底左右完成大部分吧，届时会全部开源上传
 # 使用方法
 1.在根目录 `yarn install` or  `npm install`\
 2.执行  `yarn start` or  `npm run start`
@@ -41,9 +41,6 @@
   └─store   全局的store配置\
   └─utils   工具\
   └─hooks   自定义hooks
-
-# TODO:
-1.顶部栏滑动后模糊状态（周一实现）
 
 # Getting Started with Create React App(react官方说明)
 
