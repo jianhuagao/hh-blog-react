@@ -86,3 +86,9 @@ body, textarea, select, input, button {
   background: url(../img/icon_sprite.png) no-repeat;
   background-size: 556% 378%;
 }
+
+/* 自适应时，菜单过窄 */
+
+.ant-menu-submenu-popup {
+  width: 100%;
+}

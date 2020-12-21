@@ -32,6 +32,10 @@ export const PageWrap = styled.div`
         color:${props => props.page === "/Blog" || "#3d6fd3 !important"};
       }
     }
+    //自适应时，...过小
+    .ant-menu-horizontal > .ant-menu-submenu > .ant-menu-submenu-title {
+      font-size: 30px;
+    }
   .ant-menu{
     color: ${props => props.page === "/Blog" ? "white !important" : "black !important"};
     background: transparent;
