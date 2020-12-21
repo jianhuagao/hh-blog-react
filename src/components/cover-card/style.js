@@ -31,10 +31,10 @@ export const PageWrap = styled.div`
       height:100%;
       width:100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
     img:hover {
       transform: scale(1.2);
-      transition: transform 0.4s ease;
     }
   }
   .coverCardText{

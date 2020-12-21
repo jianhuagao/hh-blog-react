@@ -29,24 +29,25 @@ export const PageWrap = styled.div`
       display:flex !important;
       justify-content:space-evenly;
       width:100%;
+      padding:25px 0px;
     }
     //隐藏轮播图的指示标
     .slick-dots-bottom {
     display: none !important;
     }
     .avatarItem{
+      transition: transform .3s cubic-bezier(.645,.045,.355,1),box-shadow .3s cubic-bezier(.645,.045,.355,1);
       background-color:white;
       cursor: pointer;
       position:relative;
     }
-    .avatarItemSelect:before{
-      position: absolute;
-      bottom: 0;
-      left: 0px;
-      right: 0px;
-      background:url(${require("@/assets/img/avatarbg.png").default})  no-repeat ;
-      content:"";height: 100%;
-      background-size: auto 100%;
+    .avatarItem:hover {
+      box-shadow: 0 20px 40px #0f2da0;
+      transform: translateY(-13px);
+    }
+    .avatarItemSelect{
+      box-shadow: 0 20px 40px #0f2da0;
+      transform: translateY(-13px);
     }
   }
 `

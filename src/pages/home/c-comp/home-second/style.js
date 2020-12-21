@@ -15,8 +15,8 @@ export const PageWrap = styled.div`
       box-shadow: 0 16px 40px #0f2da0;
       transition: transform .3s cubic-bezier(.645,.045,.355,1),box-shadow .3s cubic-bezier(.645,.045,.355,1);
       position: relative;
-      height: 400px;
-      width:260px;
+      height: 350px;
+      width:250px;
       border-radius: 4px;
       margin:10px;
       cursor: pointer;
@@ -38,16 +38,27 @@ export const PageWrap = styled.div`
           line-height: 20px;
         }
       }
-      .button{
-        width: 100%;
-        height:50%;
-        text-align:center;
-      }
     }
     .midCard:hover {
-    box-shadow: 0 20px 40px #0f2da0;
-    transform: translateY(-50px);
+      box-shadow: 0 20px 40px #0f2da0;
+      transform: translateY(-50px);
+      img{
+        opacity:1;
+      }
     }
   }
   
+`
+export const ButtonWrap = styled.div`
+  width: 100%;
+  height:42%;
+  text-align:center;
+  position:relative;
+  img{
+    transition:all 1.4s;
+    opacity:0.5;
+    position:absolute;
+    bottom:0;
+    display:block;
+  }
 `

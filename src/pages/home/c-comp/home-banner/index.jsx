@@ -1,10 +1,12 @@
 import React, { memo } from "react";
-import { Typography, Image } from "antd";
+import { Typography, Image, Button } from "antd";
+import { Link } from "react-router-dom";
+import { HeartOutlined } from "@ant-design/icons";
 import QueueAnim from "rc-queue-anim";
+import { HomeBannerData } from "@/common/virtual-data";
 import { PageWrap } from "./style";
 
 const { Title, Paragraph } = Typography;
-const blockContent = `圣诞节（Christmas）亦称耶稣圣诞节、主降生节，天主教亦称耶稣圣诞瞻礼。译名为“基督弥撒”，它源自古罗马人迎接新年的农神节，与基督教本无关系。在基督教盛行罗马帝国后，教廷随波逐流地将这种民俗节日纳入基督教体系，同时以庆祝耶稣的降生。但在圣诞节这天不是耶稣的生辰，因为《圣经》未有记载耶稣具体生于哪天，同样没提到过有此种节日，是基督教吸收了古罗马神话的结果。`;
 export default memo(function index() {
   return (
     <PageWrap>
@@ -17,7 +19,7 @@ export default memo(function index() {
         ]}
       >
         <div key="left" className="left">
-          <Title>圣诞节（Christmas）</Title>
+          <Title>{HomeBannerData[0].title}</Title>
           <Paragraph
             style={{
               lineHeight: "2em",
@@ -26,8 +28,11 @@ export default memo(function index() {
               color: "#5d5d5d",
             }}
           >
-            {blockContent}
+            {HomeBannerData[0].content}
           </Paragraph>
+          <Button shape="round" icon={<HeartOutlined />}>
+            <Link to="/Find"> 手气不错</Link>
+          </Button>
         </div>
         <div></div>
         <div key="fight" className="right">

@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Avatar, Divider, Button } from "antd";
+import { Menu, Avatar, Divider, Button, Tooltip } from "antd";
 import {
   HomeOutlined,
   GiftOutlined,
@@ -54,11 +54,18 @@ export default memo(function TopMenu() {
             </Menu>
           </div>
           <div className="top-btn">
-            <Button
-              shape="circle"
-              icon={<GithubOutlined />}
-              href="https://github.com/jianhuagao/hh-blog-react"
-            />
+            <Tooltip
+              title="源码在这里~"
+              placement="bottomRight"
+              color="#108ee9"
+              defaultVisible
+            >
+              <Button
+                shape="circle"
+                icon={<GithubOutlined />}
+                href="https://github.com/jianhuagao/hh-blog-react"
+              />
+            </Tooltip>
           </div>
         </div>
       </div>
