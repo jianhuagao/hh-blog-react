@@ -1,6 +1,8 @@
 ## (项目才写两天,算是初结构刚刚搭起，后续会尽快完善，包括网络请求等等)
 [预览地址](http://106.12.106.155:81/)
-![预览图](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/3F05A8F47FB04A14A8888B16E603022E/385)
+![预览图1](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/3F05A8F47FB04A14A8888B16E603022E/385)
+![预览图2](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/7E105DE428A743C28967B42D815137B6/390)
+![预览图3](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/B398F298C81745119A448097BC366E8F/392)
 # 目标
 打造一个完整的博客系统，包括以下四部分\
 1.博客前端展示（React+antd）\
