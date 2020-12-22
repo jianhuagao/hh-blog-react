@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { PageWrap } from "./style";
-import { Card } from "antd";
+import { Card, Divider } from "antd";
 import QueueAnim from "rc-queue-anim";
 import CoverCard from "@c/cover-card";
 import CoverType from "@c/cover-type";
@@ -27,14 +27,7 @@ const {
 export default memo(function Blog() {
   return (
     <PageWrap className="page">
-      <QueueAnim
-        className="page"
-        duration="1000"
-        animConfig={[
-          { opacity: [1, 0], translateY: [0, 50] },
-          { opacity: [1, 0], translateY: [0, -50] },
-        ]}
-      >
+      <QueueAnim className="page" duration="800" type="bottom">
         <Card key="mainCard" className="contentCard">
           <div className="contentCardChi">
             <CoverType
@@ -48,17 +41,21 @@ export default memo(function Blog() {
               system={system}
             />
             <br />
-            {BlogData.map((item, index) => {
-              return (
-                <CoverCard
-                  key={item.title + index}
-                  title={item.title}
-                  dateTime={item.dateTime}
-                  content={item.content}
-                  imgUrl={item.imgUrl}
-                />
-              );
-            })}
+            <Divider />
+            <br />
+            <QueueAnim type="bottom">
+              {BlogData.map((item, index) => {
+                return (
+                  <CoverCard
+                    key={item.title + index}
+                    title={item.title}
+                    dateTime={item.dateTime}
+                    content={item.content}
+                    imgUrl={item.imgUrl}
+                  />
+                );
+              })}
+            </QueueAnim>
           </div>
         </Card>
       </QueueAnim>

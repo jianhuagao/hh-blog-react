@@ -9,7 +9,7 @@ export const PageWrap = styled.div`
   font-family: Avenir, -apple-system, BlinkMacSystemFont, segoe ui, pingfang sc, hiragino sans gb, microsoft yahei, helvetica neue, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, sans-serif;
   width:100%;
   margin-bottom:22px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #dedede;
   
   .coverCardTitle{
     height:55px;

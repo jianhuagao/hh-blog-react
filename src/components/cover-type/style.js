@@ -5,7 +5,7 @@ export const PageWrap = Styled.div`
   background-color:white;
   background:url(${require("@/assets/img/cardbg1.png").default})  no-repeat center right;
   background-size:auto 100%; 
-  box-shadow: 0px 0px 40px 0px rgba(100,100,136,0.15);
+  box-shadow: -3px -5px 38px 0px rgba(100,100,136,0.15);
   .ant-page-header-heading-left{
     flex-wrap:wrap;
   }
