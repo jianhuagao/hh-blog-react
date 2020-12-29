@@ -40,9 +40,7 @@ export default memo(function Blog() {
               download={download}
               system={system}
             />
-            <br />
             <Divider />
-            <br />
             <QueueAnim type="bottom">
               {BlogData.map((item, index) => {
                 return (

@@ -11,7 +11,7 @@ const { CheckableTag } = Tag;
 export default memo(function HomeShow() {
   //hooks
   const [typeNum, setTypeNum] = useState(5);
-  const [selectType, setSelectType] = useState("Dart");
+  const [selectType, setSelectType] = useState("Node");
   const CarouselRef = useRef();
   const avatarSize = {
     xs: 60,

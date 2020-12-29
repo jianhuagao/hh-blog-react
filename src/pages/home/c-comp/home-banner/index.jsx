@@ -31,7 +31,7 @@ export default memo(function index() {
           <div className="right">
             <Image
               width={400}
-              src={require("@/assets/img/web_developer.svg").default}
+              src={require("@/assets/img/web_developer.png").default}
             />
           </div>
         </div>
