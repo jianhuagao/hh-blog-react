@@ -1,5 +1,5 @@
 # Happy hacking Blog
-### 之前有朋友提到，博客用前端渲染不利于SEO优化，后面我向NextJs版本移植，[移植地址](https://github.com/jianhuagao/hh-blog-next)
+### 之前有朋友提到，博客用前端渲染不利于SEO优化，后面我向NextJs版本移植，[移植地址](https://github.com/jianhuagao/hh-blog-next) （暂未完全完成移植，移植后会在此进行标注）
 [预览地址](http://121.4.115.182/)
 ![预览图1](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/3F05A8F47FB04A14A8888B16E603022E/385)
 ![预览图2](http://note.youdao.com/yws/public/resource/3e1864e39f6f235bd4814baa9759085a/xmlnote/7E105DE428A743C28967B42D815137B6/390)
