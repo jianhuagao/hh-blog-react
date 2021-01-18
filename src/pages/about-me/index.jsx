@@ -2,18 +2,24 @@ import React, { memo } from "react";
 import { Result } from "antd";
 import { SmileOutlined } from "@ant-design/icons";
 import { PageWrap } from "./style";
-import QueueAnim from "rc-queue-anim";
+import { useSpring as spring, animated } from "react-spring";
+
 export default memo(function AboutMe() {
+  const amd = spring({
+    opacity: 1,
+    transform: "translateX(0px)",
+    from: { opacity: 0, transform: "translateX(40px)" },
+  });
   return (
     <PageWrap>
       <div className="page" style={{ marginTop: "100px" }}>
-        <QueueAnim className="page" duration="2000">
+        <animated.div className="page" style={amd}>
           <Result
             key="ret"
             icon={<SmileOutlined />}
             title="欢迎来到我的博客，网站建设中暂无更多内容 :)"
           />
-        </QueueAnim>
+        </animated.div>
       </div>
     </PageWrap>
   );

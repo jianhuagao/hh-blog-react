@@ -1,20 +1,12 @@
 import React, { memo } from "react";
 import { PageWrap } from "./style";
 import { Card, Divider } from "antd";
-import QueueAnim from "rc-queue-anim";
 import CoverCard from "@c/cover-card";
 import CoverType from "@c/cover-type";
 import { BlogData } from "@/common/virtual-data";
 import { TypeDetails } from "@/common/virtual-data";
-//   type: "Dart",
-//   Introduction: "Dart是谷歌开发的计算机编程语言",
-//   apiUrl: "",
-//   website: "",
-//   company: "Google",
-//   protocol: "BSD",
-//   version: "2.2.0",
-//   download: "下载",
-//   system: "跨平台",
+import {useSpring as spring, animated} from 'react-spring'
+
 const {
   type,
   Introduction,
@@ -25,9 +17,10 @@ const {
   system,
 } = TypeDetails[0];
 export default memo(function Blog() {
+  const amd = spring({opacity: 1,transform:"translateX(0px)", from: {opacity: 0,transform:"translateX(40px)"}})
   return (
     <PageWrap className="page">
-      <QueueAnim className="page" duration="800" type="bottom">
+      <animated.div className="page" style={amd}>
         <Card key="mainCard" className="contentCard">
           <div className="contentCardChi">
             <CoverType
@@ -41,7 +34,7 @@ export default memo(function Blog() {
               system={system}
             />
             <Divider />
-            <QueueAnim type="bottom">
+            <animated.div style={amd}>
               {BlogData.map((item, index) => {
                 return (
                   <CoverCard
@@ -53,10 +46,10 @@ export default memo(function Blog() {
                   />
                 );
               })}
-            </QueueAnim>
+            </animated.div>
           </div>
         </Card>
-      </QueueAnim>
+      </animated.div>
     </PageWrap>
   );
 });

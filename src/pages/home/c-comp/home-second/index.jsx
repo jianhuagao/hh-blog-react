@@ -1,15 +1,16 @@
 import React, { memo } from "react";
-import QueueAnim from "rc-queue-anim";
 import { Typography } from "antd";
 import { PageWrap, ButtonWrap } from "./style";
+import {useSpring as spring, animated} from 'react-spring'
 
 const { Title, Text } = Typography;
 
 export default memo(function index() {
+  const amd = spring({opacity: 1,transform:"translateY(0px)", from: {opacity: 0,transform:"translateY(40px)"}})
   return (
     <PageWrap>
-      <QueueAnim duration="1500" type="bottom">
-        <div className="page midCardContent" key="midCard">
+      <animated.div style={amd}>
+        <div className="page midCardContent">
           <div className="midCard">
             <div className="top">
               <Title level={4}>原创</Title>
@@ -56,7 +57,7 @@ export default memo(function index() {
             </ButtonWrap>
           </div>
         </div>
-      </QueueAnim>
+      </animated.div>
     </PageWrap>
   );
 });

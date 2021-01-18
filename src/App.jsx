@@ -3,6 +3,7 @@ import { HashRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import { router } from "./router";
 import TopMenu from "./components/top-menu";
+import Footer from "@c/footer";
 //骨架屏
 import SkeletonComp from "@c/skeleton";
 //TOP按钮
@@ -22,6 +23,7 @@ export default memo(function App() {
           <Suspense fallback={<SkeletonComp />}>
             {renderRoutes(router)}
           </Suspense>
+          <Footer />
         </div>
       </PageWrap>
     </HashRouter>

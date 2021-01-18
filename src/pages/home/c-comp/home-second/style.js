@@ -7,7 +7,7 @@ export const PageWrap = styled.div`
   .midCardContent{
     display:flex;
     flex-wrap:wrap;
-    margin: 219px auto 160px;
+    margin: 219px auto 50px;
     justify-content: center;
 
     .midCard{

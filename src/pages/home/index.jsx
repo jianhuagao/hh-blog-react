@@ -13,7 +13,6 @@ export default memo(function HomePage() {
         <HomeSecond />
       </div>
       <div className="home-page-wrapper cpm">
-        <div className="page"></div>
       </div>
     </PageWrap>
   );

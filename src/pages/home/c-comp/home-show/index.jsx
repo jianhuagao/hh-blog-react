@@ -1,9 +1,9 @@
 import React, { memo, useRef, useState, useEffect } from "react";
 import { Typography, Carousel, Avatar, Button, Tag } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import QueueAnim from "rc-queue-anim";
 import { PageWrap } from "./style";
 import { TechnologyStack } from "@/common/virtual-data";
+import { useSpring as spring, animated } from "react-spring";
 
 const { Title } = Typography;
 const { CheckableTag } = Tag;
@@ -24,10 +24,14 @@ export default memo(function HomeShow() {
   useEffect(() => {
     window.innerWidth < 620 && setTypeNum(4);
   }, []);
-
+  const amd = spring({
+    opacity: 1,
+    transform: "translateX(0px)",
+    from: { opacity: 0, transform: "translateX(40px)" },
+  });
   const pagesNum = Math.ceil(TechnologyStack.length / typeNum);
   const pArr = Array.from(new Array(pagesNum).keys()).slice(0);
-  //TODO:当前有个关于ref的Warning未解决
+
   return (
     <PageWrap>
       <div className="page con">
@@ -51,11 +55,11 @@ export default memo(function HomeShow() {
             CarouselRef.current.next();
           }}
         />
-        <Carousel ref={CarouselRef}>
-          {pArr.map((item, index) => {
-            return (
-              <QueueAnim key={index}>
-                <div key={index} className="carouselItem">
+        <animated.div style={amd}>
+          <Carousel ref={CarouselRef}>
+            {pArr.map((item, index) => {
+              return (
+                <div className="carouselItem" key={index}>
                   {TechnologyStack.slice(
                     index * typeNum,
                     (index + 1) * typeNum
@@ -92,10 +96,10 @@ export default memo(function HomeShow() {
                     );
                   })}
                 </div>
-              </QueueAnim>
-            );
-          })}
-        </Carousel>
+              );
+            })}
+          </Carousel>
+        </animated.div>
       </div>
     </PageWrap>
   );

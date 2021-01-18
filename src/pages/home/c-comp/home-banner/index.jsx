@@ -2,16 +2,21 @@ import React, { memo } from "react";
 import { Typography, Image, Button } from "antd";
 import { Link } from "react-router-dom";
 import { HeartOutlined } from "@ant-design/icons";
-import QueueAnim from "rc-queue-anim";
 import { HomeBannerData } from "@/common/virtual-data";
 import { PageWrap } from "./style";
+import {useSpring as spring, animated} from 'react-spring'
+
+
 
 const { Title, Paragraph } = Typography;
+
 export default memo(function index() {
+const amd = spring({opacity: 1,transform:"translateX(0px)", from: {opacity: 0,transform:"translateX(40px)"}})
+
   return (
     <PageWrap>
-      <QueueAnim>
-        <div className="page" key="content">
+      <animated.div style={amd}>
+        <div className="page">
           <div className="left">
             <Title>{HomeBannerData[0].title}</Title>
             <Paragraph
@@ -35,7 +40,7 @@ export default memo(function index() {
             />
           </div>
         </div>
-      </QueueAnim>
+      </animated.div>
     </PageWrap>
   );
 });
