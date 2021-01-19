@@ -3,7 +3,7 @@ import { PageWrap } from "./style";
 
 export default memo(function CoverCard(props) {
   return (
-    <PageWrap>
+    <PageWrap {...props}>
       <div className="coverCardTitle">{props.title}</div>
       <div className="coverCardContent">
         <div className="coverCardImg">

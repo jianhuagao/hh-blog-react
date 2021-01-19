@@ -183,6 +183,7 @@ export const TechnologyStack = [
 
 export const BlogData = [
   {
+    id:1,
     title: "Node.js 事件循环机制",
     imgUrl: "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png",
     dateTime: "2天前",
@@ -193,6 +194,7 @@ export const BlogData = [
     并通过回调函数返回到上层调用；如果是 I/O 任务，就从 线程池 中拿出一个线程来处理这个事件，并指定回调函数，然后继续循环队列中的其他事件。`
   },
   {
+    id:2,
     title: "Node.js 深入学之理解Buffer",
     imgUrl: "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg",
     dateTime: "周一",

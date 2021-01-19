@@ -1,8 +1,7 @@
 import request from './request'
 
-export function getBlogType(ids) {
+export function getBlogType() {
   return request({
-    url: '/song/detail',
-    params: { ids }
+    url: '/blogType'
   })
 }

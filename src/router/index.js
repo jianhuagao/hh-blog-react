@@ -5,6 +5,7 @@ const Home = lazy(_ => import("@p/home"))
 const Find = lazy(_ => import("@p/find"))
 const Blog = lazy(_ => import("@p/blog"))
 const AboutMe = lazy(_ => import("@p/about-me"))
+const BlogDetail = lazy(_ => import("@p/blog/blogdetail"))
 // const SkeletonComp = lazy(_ => import("@c/skeleton"))
 
 export const router = [
@@ -23,7 +24,12 @@ export const router = [
   },
   {
     path: '/Blog',
-    component: Blog
+    component: Blog,
+    exact: true,
+  }, 
+  {
+    path: "/Blog/:id",
+    component: BlogDetail
   },
   {
     path: '/AboutMe',

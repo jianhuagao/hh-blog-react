@@ -16,12 +16,12 @@ const {
   download,
   system,
 } = TypeDetails[0];
-export default memo(function Blog() {
+export default memo(function Blog(props) {
   const amd = spring({opacity: 1,transform:"translateX(0px)", from: {opacity: 0,transform:"translateX(40px)"}})
   return (
     <PageWrap className="page">
       <animated.div className="page" style={amd}>
-        <Card key="mainCard" className="contentCard">
+        <Card className="contentCard">
           <div className="contentCardChi">
             <CoverType
               key="1"
@@ -43,6 +43,9 @@ export default memo(function Blog() {
                     dateTime={item.dateTime}
                     content={item.content}
                     imgUrl={item.imgUrl}
+                    onClick={e=>{
+                      props.history.push(`/Blog/${item.id}`);
+                    }}
                   />
                 );
               })}
