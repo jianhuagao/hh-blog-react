@@ -5,7 +5,8 @@ import CoverCard from "@c/cover-card";
 import CoverType from "@c/cover-type";
 import { BlogData } from "@/common/virtual-data";
 import { TypeDetails } from "@/common/virtual-data";
-import {useSpring as spring, animated} from 'react-spring'
+import { useFromRight } from "@/hooks/animation";
+import { animated} from 'react-spring'
 
 const {
   type,
@@ -17,10 +18,9 @@ const {
   system,
 } = TypeDetails[0];
 export default memo(function Blog(props) {
-  const amd = spring({opacity: 1,transform:"translateX(0px)", from: {opacity: 0,transform:"translateX(40px)"}})
   return (
     <PageWrap className="page">
-      <animated.div className="page" style={amd}>
+      <animated.div className="page" style={useFromRight()}>
         <Card className="contentCard">
           <div className="contentCardChi">
             <CoverType
@@ -34,7 +34,7 @@ export default memo(function Blog(props) {
               system={system}
             />
             <Divider />
-            <animated.div style={amd}>
+            <animated.div style={useFromRight()}>
               {BlogData.map((item, index) => {
                 return (
                   <CoverCard

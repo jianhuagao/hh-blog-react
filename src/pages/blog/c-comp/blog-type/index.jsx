@@ -3,10 +3,13 @@ import { Typography, Carousel, Avatar, Button, Tag } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { PageWrap } from "./style";
 import { TechnologyStack } from "@/common/virtual-data";
-import { useSpring as spring, animated } from "react-spring";
+import { animated, useSpring } from "react-spring";
+import { useFromRight } from "@/hooks/animation";
 
 const { Title } = Typography;
 const { CheckableTag } = Tag;
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
+const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 export default memo(function HomeShow() {
   //hooks
@@ -24,18 +27,16 @@ export default memo(function HomeShow() {
   useEffect(() => {
     window.innerWidth < 620 && setTypeNum(4);
   }, []);
-  const amd = spring({
-    opacity: 1,
-    transform: "translateX(0px)",
-    from: { opacity: 0, transform: "translateX(40px)" },
-  });
   const pagesNum = Math.ceil(TechnologyStack.length / typeNum);
   const pArr = Array.from(new Array(pagesNum).keys()).slice(0);
-
+  const [props, set] = useSpring(() => ({
+    xys: [0, 0, 1],
+    config: { mass: 5, tension: 550, friction: 50 },
+  }));
   return (
     <PageWrap>
       <div className="page con">
-        <Title level={3}>博文分类</Title>
+        <Title level={3}>My Blog</Title>
         <br />
         <Button
           className="btnLeft"
@@ -55,7 +56,7 @@ export default memo(function HomeShow() {
             CarouselRef.current.next();
           }}
         />
-        <animated.div style={amd}>
+        <animated.div style={useFromRight()}>
           <Carousel ref={CarouselRef}>
             {pArr.map((item, index) => {
               return (
@@ -65,7 +66,14 @@ export default memo(function HomeShow() {
                     (index + 1) * typeNum
                   ).map((item2, index2) => {
                     return (
-                      <div key={index2}>
+                      <animated.div
+                        key={index2}
+                        onMouseMove={({ clientX: x, clientY: y }) =>
+                          set({ xys: calc(x, y) })
+                        }
+                        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                        style={{ transform: props.xys.interpolate(trans) }}
+                      >
                         <Avatar
                           className={{
                             avatarItem: true,
@@ -92,7 +100,7 @@ export default memo(function HomeShow() {
                             {item2.title}
                           </CheckableTag>
                         </div>
-                      </div>
+                      </animated.div>
                     );
                   })}
                 </div>

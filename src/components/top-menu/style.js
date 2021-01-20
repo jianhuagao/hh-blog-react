@@ -4,14 +4,14 @@ import styled from "styled-components"
 export const PageWrap = styled.div`
   color: ${props => props.page === "/Blog" ? "white" : "black"};
   width: 100%;
-  height: 64px;
-  margin-top:20px;
   a{
     text-decoration:none;
   }
   .content{
+    height: 83px;
     display:flex;
     justify-content:space-between;
+    align-items:center;
     font-size:14px;
     .c_right{
     display:flex;

@@ -1,15 +1,16 @@
 import React, { memo } from "react";
 import { Typography } from "antd";
 import { PageWrap, ButtonWrap } from "./style";
-import {useSpring as spring, animated} from 'react-spring'
+import {animated} from 'react-spring'
+import { useFromBottom } from "@/hooks/animation";
 
 const { Title, Text } = Typography;
 
-export default memo(function index() {
-  const amd = spring({opacity: 1,transform:"translateY(0px)", from: {opacity: 0,transform:"translateY(40px)"}})
+export default memo(function Second() {
+
   return (
     <PageWrap>
-      <animated.div style={amd}>
+      <animated.div style={useFromBottom()}>
         <div className="page midCardContent">
           <div className="midCard">
             <div className="top">

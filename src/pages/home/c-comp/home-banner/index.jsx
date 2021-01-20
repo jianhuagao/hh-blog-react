@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 import { HeartOutlined } from "@ant-design/icons";
 import { HomeBannerData } from "@/common/virtual-data";
 import { PageWrap } from "./style";
-import {useSpring as spring, animated} from 'react-spring'
+import { animated } from 'react-spring'
+import { useFromRight } from "@/hooks/animation";
 
 
 
 const { Title, Paragraph } = Typography;
 
-export default memo(function index() {
-const amd = spring({opacity: 1,transform:"translateX(0px)", from: {opacity: 0,transform:"translateX(40px)"}})
+export default memo(function Banner() {
 
   return (
     <PageWrap>
-      <animated.div style={amd}>
+      <animated.div style={useFromRight()}>
         <div className="page">
           <div className="left">
             <Title>{HomeBannerData[0].title}</Title>

@@ -17,7 +17,7 @@ export default memo(function App() {
       <PageWrap>
         <BackTop />
         <div className="main-top home-page-wrapper">
-          <TopMenu />
+            <TopMenu/>
         </div>
         <div className="main-content home-page-wrapper">
           <Suspense fallback={<SkeletonComp />}>

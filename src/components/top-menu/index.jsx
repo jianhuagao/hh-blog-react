@@ -23,7 +23,7 @@ export default memo(function TopMenu() {
   return (
     <PageWrap page={location.pathname}>
       <div className="content page">
-        <div key="left" className="c_left">
+        <div>
           <Avatar
             size={44}
             icon={<UserOutlined />}
@@ -32,7 +32,7 @@ export default memo(function TopMenu() {
           <Divider type="vertical" style={{ fontSize: 30 }} />
           <span>Happy hacking Blog</span>
         </div>
-        <div key="right" className="c_right">
+        <div className="c_right">
           <div>
             <Menu
               mode="horizontal"

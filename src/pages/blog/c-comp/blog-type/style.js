@@ -41,10 +41,10 @@ export const PageWrap = styled.div`
       cursor: pointer;
       position:relative;
     }
-    .avatarItem:hover {
+    /* .avatarItem:hover {
       box-shadow: 0 20px 40px #0f2da0;
       transform: translateY(-13px);
-    }
+    } */
     .avatarItemSelect{
       box-shadow: 0 20px 40px #0f2da0;
       transform: translateY(-13px);

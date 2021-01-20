@@ -13,4 +13,8 @@ export const PageWrap = styled.div`
     position: absolute;
     top: 0px;
   }
+  .topMenuShow{
+    background-color:black;
+    color:red;
+  }
 `
