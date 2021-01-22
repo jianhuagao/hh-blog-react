@@ -8,15 +8,12 @@ import Comment from "./c-comp/comment";
 import Header from "./c-comp/blog-header";
 import Replay from "./c-comp/replay";
 import { BlogdetailWrap } from "./style";
-import { useSpring as spring, animated } from "react-spring";
+import { animated } from "react-spring";
 import ReactMarkdown from "react-markdown";
+import { useFromRight } from "@/hooks/animation";
 
 export default memo(function Blogdetail(props) {
-  const amd = spring({
-    opacity: 1,
-    transform: "translateX(0px)",
-    from: { opacity: 0, transform: "translateX(40px)" },
-  });
+
   const [blogId, setBlogId] = useState();
   const [drawerVis, setDrawerVis] = useState(false);
   const [rightShow, setRightShow] = useState(true);
@@ -71,9 +68,9 @@ export default memo(function Blogdetail(props) {
   }, [id]);
   return (
     <BlogdetailWrap>
-      <animated.div className="page" style={amd}>
+      <animated.div className="page" style={useFromRight()}>
         <div className="header">
-          <Header rightShow={rightShow} setDrawerVis={setDrawerVis} />
+          <Header blogId={blogId}/>
         </div>
         <div className="contents">
           <div className={classnames({ left: true, "left-pc": rightShow })}>

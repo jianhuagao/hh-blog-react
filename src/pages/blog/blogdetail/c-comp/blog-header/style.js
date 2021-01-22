@@ -1,4 +1,3 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const BlogHeaderWrap = styled.div`
-`
+export const BlogHeaderWrap = styled.div``;

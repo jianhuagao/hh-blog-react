@@ -5,7 +5,7 @@ import { BASE_URL, TIMEOUT } from './config'
 //create a axios
 const instance = axios.create({
   baseURL: BASE_URL,
-  timeout: TIMEOUT
+  timeout: TIMEOUT,
 });
 
 instance.interceptors.request.use(config => {
@@ -23,6 +23,7 @@ instance.interceptors.request.use(config => {
 instance.interceptors.response.use(res => {
   return res.data;
 }, err => {
+  console.log(err)
   if (err && err.response) {
     switch (err.response.status) {
       case 400:

@@ -3,18 +3,16 @@ import { Typography, Carousel, Avatar, Button, Tag } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { PageWrap } from "./style";
 import { TechnologyStack } from "@/common/virtual-data";
-import { animated, useSpring } from "react-spring";
-import { useFromRight } from "@/hooks/animation";
+import { animated } from "react-spring";
+import { useFromRight, useHov } from "@/hooks/animation";
 
 const { Title } = Typography;
 const { CheckableTag } = Tag;
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
-const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-export default memo(function HomeShow() {
+export default memo(function HomeShow(props) {
   //hooks
+  const {type,setType}=props.data;
   const [typeNum, setTypeNum] = useState(5);
-  const [selectType, setSelectType] = useState("Node");
   const CarouselRef = useRef();
   const avatarSize = {
     xs: 60,
@@ -29,10 +27,8 @@ export default memo(function HomeShow() {
   }, []);
   const pagesNum = Math.ceil(TechnologyStack.length / typeNum);
   const pArr = Array.from(new Array(pagesNum).keys()).slice(0);
-  const [props, set] = useSpring(() => ({
-    xys: [0, 0, 1],
-    config: { mass: 5, tension: 550, friction: 50 },
-  }));
+  const [tran,setTran,,calc,trans] = useHov();
+
   return (
     <PageWrap>
       <div className="page con">
@@ -69,19 +65,19 @@ export default memo(function HomeShow() {
                       <animated.div
                         key={index2}
                         onMouseMove={({ clientX: x, clientY: y }) =>
-                          set({ xys: calc(x, y) })
+                          setTran({ xys: calc(x, y) })
                         }
-                        onMouseLeave={() => set({ xys: [0, 0, 1] })}
-                        style={{ transform: props.xys.interpolate(trans) }}
+                        onMouseLeave={() => setTran({ xys: [0, 0, 1] })}
+                        style={{ transform: tran.xys.interpolate(trans) }}
                       >
                         <Avatar
                           className={{
                             avatarItem: true,
                             icon_sprite: true,
-                            avatarItemSelect: selectType === item2.title,
+                            avatarItemSelect: type === item2.id,
                           }}
                           onClick={() => {
-                            setSelectType(item2.title);
+                            setType(item2.id);
                           }}
                           style={{
                             backgroundPosition: item2.imgUrl,
@@ -95,7 +91,7 @@ export default memo(function HomeShow() {
                               fontSize: "17px",
                               marginTop: "5px",
                             }}
-                            checked={selectType === item2.title}
+                            checked={type === item2.id}
                           >
                             {item2.title}
                           </CheckableTag>

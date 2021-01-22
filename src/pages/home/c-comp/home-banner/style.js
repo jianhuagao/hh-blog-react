@@ -9,10 +9,14 @@ export const PageWrap = styled.div`
 
       .left{
       max-width: 500px;
+      margin-bottom:20px;
       }
       .right{
         display: flex;
         align-items:center;
+        img{
+          box-shadow: rgba(0,0,0,0.12) 1px 0px 40px 0px;
+        }
       }
     }
   

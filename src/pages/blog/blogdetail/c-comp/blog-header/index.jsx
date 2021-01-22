@@ -3,11 +3,11 @@ import {PageHeader, Button,Tag } from "antd";
 import { HeartTwoTone,LikeTwoTone,BuildTwoTone } from "@ant-design/icons";
 import { BlogHeaderWrap } from "./style";
 
-export default memo(function BlogHeader() {
+export default memo(function BlogHeader({blogId}) {
   return (
     <BlogHeaderWrap>
       <PageHeader
-          title="quick-react-app"
+          title={`quick-react-app${blogId}`}
           subTitle="2021年1月20日"
           tags={<Tag color="blue">原创</Tag>}
           avatar={{ src: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' }}

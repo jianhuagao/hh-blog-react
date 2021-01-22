@@ -225,9 +225,9 @@ export const TypeDetails = [
 
 export const HomeBannerData = [
   {
-    title: "圣诞节",
-    content: "传说，有一位农民在一个风雪交加的圣诞夜里接待了一个饥寒交迫的小孩，给他吃了一顿丰盛的圣诞晚餐，孩子告别时，折了一根杉树枝插在地上并祝福说：“年年此日，礼物满枝，留此美丽的杉树，报答你的好意。”小孩走后，农民惊讶地发现那树枝变成了一棵小树，上面挂满了礼物。原来，这个小孩是上帝的一位使者，后来这个故事就成为圣诞树的来源。",
-    aboutDate: "每年12月25日",
+    title: "Next.js",
+    content: `这是一个用于 生产环境的React 框架,Next.js 为您提供生产环境所需的所有功能以及最佳的开发体验：包括静态及服务器端融合渲染、 支持 TypeScript、智能化打包、 路由预取等功能 无需任何配置。`,
+    aboutDate: "nodejs",
     source: "百度百科",
     imgUrl: "@/assets/img/web_developer.svg",
     isShow: 1

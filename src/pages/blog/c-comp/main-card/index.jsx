@@ -18,10 +18,12 @@ const {
   system,
 } = TypeDetails[0];
 export default memo(function Blog(props) {
+  const {type : selectType,history} = props.data;
   return (
     <PageWrap className="page">
       <animated.div className="page" style={useFromRight()}>
         <Card className="contentCard">
+          {selectType}
           <div className="contentCardChi">
             <CoverType
               key="1"
@@ -44,7 +46,7 @@ export default memo(function Blog(props) {
                     content={item.content}
                     imgUrl={item.imgUrl}
                     onClick={e=>{
-                      props.history.push(`/Blog/${item.id}`);
+                      history.push(`/Blog/${item.id}`);
                     }}
                   />
                 );
