@@ -8,6 +8,7 @@ import {
   GithubOutlined,
   SketchOutlined,
   UserOutlined,
+  RocketOutlined
 } from "@ant-design/icons";
 import { PageWrap } from "./style";
 
@@ -49,7 +50,10 @@ export default memo(function TopMenu() {
                 <Link to="/Find">Find</Link>
               </Menu.Item>
               <Menu.Item key="/AboutMe" icon={<SketchOutlined />}>
-                <Link to="/AboutMe">AboutMe</Link>
+                <Link to="/AboutMe">Hello</Link>
+              </Menu.Item>
+              <Menu.Item key="/Admin" icon={<RocketOutlined />}>
+                <a href="http://admin.gaojianhua.top" target="blank">Admin</a>
               </Menu.Item>
             </Menu>
           </div>

@@ -36,7 +36,7 @@ instance.interceptors.response.use(res => {
         console.log("其他错误信息");
     }
   }
-  return err;
+  return Promise.reject(err);
 });
 
 export default instance;
