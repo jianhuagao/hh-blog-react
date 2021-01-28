@@ -6,7 +6,7 @@ import {
 const changeTopBannersAction = (res) => {
   return {
     type: action.CHANGE_BANNERS,
-    banners: res
+    banners: res.rows
   }
 }
 
