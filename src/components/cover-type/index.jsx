@@ -2,15 +2,6 @@ import React, { memo, useEffect, useState } from "react";
 import { PageHeader, Button, Descriptions } from "antd";
 import { PageWrap } from "./style";
 export default memo(function CoverType(props) {
-  //   type: "Dart",
-  //   Introduction: "Dart是谷歌开发的计算机编程语言",
-  //   apiUrl: "",
-  //   website: "",
-  //   company: "Google",
-  //   protocol: "BSD",
-  //   version: "2.2.0",
-  //   download: "下载",
-  //   system: "跨平台",
   const {
     type,
     Introduction,
@@ -37,7 +28,7 @@ export default memo(function CoverType(props) {
         ]}
       >
         <Descriptions size="small" column={columnNum}>
-          <Descriptions.Item label="公司">{company}</Descriptions.Item>
+          <Descriptions.Item label="作者">{company}</Descriptions.Item>
           <Descriptions.Item label="开源协议">{protocol}</Descriptions.Item>
           <Descriptions.Item label="最新版本">{version}</Descriptions.Item>
           <Descriptions.Item label="安装使用">{download}</Descriptions.Item>

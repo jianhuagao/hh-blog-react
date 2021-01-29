@@ -1,0 +1,1 @@
+export const CHANGE_BLOGTYPES = "blog/CHANGE_BLOGTYPES"

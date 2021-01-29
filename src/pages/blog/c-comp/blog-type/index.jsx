@@ -1,8 +1,9 @@
-import React, { memo, useRef, useState, useEffect } from "react";
-import { Typography, Carousel, Avatar, Button, Tag } from "antd";
+import React, { memo, useRef, useEffect } from "react";
+import { Typography, Carousel, Avatar, Button, Tag, Image } from "antd";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { getBlogTypesAction } from "../../store/actionCreators";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { PageWrap } from "./style";
-import { TechnologyStack } from "@/common/virtual-data";
 import { animated } from "react-spring";
 import { useFromRight, useHov } from "@/hooks/animation";
 
@@ -11,9 +12,21 @@ const { CheckableTag } = Tag;
 
 export default memo(function HomeShow(props) {
   //hooks
-  const {type,setType}=props.data;
-  const [typeNum, setTypeNum] = useState(5);
+  const { type, setType } = props.data;
+  const typeNum = window.innerWidth < 620 ? 4 : 5;
   const CarouselRef = useRef();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBlogTypesAction());
+  }, [dispatch]);
+
+  const { blogTypes } = useSelector(
+    (state) => ({
+      blogTypes: state.getIn(["blog", "blogTypes"]),
+    }),
+    shallowEqual
+  );
+
   const avatarSize = {
     xs: 60,
     sm: 70,
@@ -22,13 +35,10 @@ export default memo(function HomeShow(props) {
     xl: 100,
     xxl: 110,
   };
-  useEffect(() => {
-    window.innerWidth < 620 && setTypeNum(4);
-  }, []);
-  const pagesNum = Math.ceil(TechnologyStack.length / typeNum);
+  const pagesNum = Math.ceil((blogTypes.count || 5) / typeNum);
   const pArr = Array.from(new Array(pagesNum).keys()).slice(0);
-  const [tran,setTran,,calc,trans] = useHov();
-
+  const [tran, setTran, , calc, trans] = useHov();
+  const TechnologyStack = blogTypes.rows || [];
   return (
     <PageWrap>
       <div className="page con">
@@ -73,15 +83,17 @@ export default memo(function HomeShow(props) {
                         <Avatar
                           className={{
                             avatarItem: true,
-                            icon_sprite: true,
                             avatarItemSelect: type === item2.id,
                           }}
                           onClick={() => {
                             setType(item2.id);
                           }}
-                          style={{
-                            backgroundPosition: item2.imgUrl,
-                          }}
+                          src={
+                            <Image
+                              preview={false}
+                              src={item2.logo_img}
+                            />
+                          }
                           size={avatarSize}
                         />
                         <div>
@@ -93,7 +105,7 @@ export default memo(function HomeShow(props) {
                             }}
                             checked={type === item2.id}
                           >
-                            {item2.title}
+                            {item2.name}
                           </CheckableTag>
                         </div>
                       </animated.div>
