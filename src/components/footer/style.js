@@ -16,5 +16,6 @@ export const FooterWrap = styled.div`
   .right{
     display: flex;
     align-items:center;
+    flex-wrap:wrap;
   }
 `

@@ -1,6 +1,8 @@
 import * as action from './constants'
 import {
-  getBlogTypes
+  getBlogTypes,
+  getBlogList,
+  getBlog
 } from '@/service/blog'
 
 const changeBlogTypesAction = (res) => {
@@ -14,6 +16,36 @@ export const getBlogTypesAction = () => {
   return dispatch => {
     getBlogTypes().then(res => {
       dispatch(changeBlogTypesAction(res))
+    })
+  }
+}
+
+const changeBlogListAction = (res) => {
+  return {
+    type: action.CHANGE_BLOGLIST,
+    blogList: res
+  }
+}
+
+export const getBlogListAction = (type) => {
+  return dispatch => {
+    getBlogList(type).then(res => {
+      dispatch(changeBlogListAction(res))
+    })
+  }
+}
+
+const changeBlogAction = (res) => {
+  return {
+    type: action.CHANGE_BLOG,
+    blog: res
+  }
+}
+
+export const getBlogAction = (id) => {
+  return dispatch => {
+    getBlog(id).then(res => {
+      dispatch(changeBlogAction(res))
     })
   }
 }

@@ -4,6 +4,9 @@ export const PageWrap = styled.div`
   background-color:#3d6fd3;
   background:url(${require("@/assets/img/bluebg.png").default})  no-repeat  34% 19%;
   padding:70px 0px;
+  .ant-skeleton {
+    padding: 20px;
+  }
   .con{
     padding:30px 0px;
     text-align:center;

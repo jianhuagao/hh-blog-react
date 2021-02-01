@@ -1,5 +1,12 @@
 import React, { memo, useRef, useEffect } from "react";
-import { Typography, Carousel, Avatar, Button, Tag, Image } from "antd";
+import {
+  Typography,
+  Carousel,
+  Avatar,
+  Button,
+  Tag,
+  Skeleton,
+} from "antd";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { getBlogTypesAction } from "../../store/actionCreators";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
@@ -63,58 +70,57 @@ export default memo(function HomeShow(props) {
           }}
         />
         <animated.div style={useFromRight()}>
-          <Carousel ref={CarouselRef}>
-            {pArr.map((item, index) => {
-              return (
-                <div className="carouselItem" key={index}>
-                  {TechnologyStack.slice(
-                    index * typeNum,
-                    (index + 1) * typeNum
-                  ).map((item2, index2) => {
-                    return (
-                      <animated.div
-                        key={index2}
-                        onMouseMove={({ clientX: x, clientY: y }) =>
-                          setTran({ xys: calc(x, y) })
-                        }
-                        onMouseLeave={() => setTran({ xys: [0, 0, 1] })}
-                        style={{ transform: tran.xys.interpolate(trans) }}
-                      >
-                        <Avatar
-                          className={{
-                            avatarItem: true,
-                            avatarItemSelect: type === item2.id,
-                          }}
-                          onClick={() => {
-                            setType(item2.id);
-                          }}
-                          src={
-                            <Image
-                              preview={false}
-                              src={item2.logo_img}
-                            />
+          <Skeleton loading={!blogTypes.count}>
+            <Carousel ref={CarouselRef}>
+              {pArr.map((item, index) => {
+                return (
+                  <div className="carouselItem" key={index}>
+                    {TechnologyStack.slice(
+                      index * typeNum,
+                      (index + 1) * typeNum
+                    ).map((item2, index2) => {
+                      return (
+                        <animated.div
+                          key={index2}
+                          onMouseMove={({ clientX: x, clientY: y }) =>
+                            setTran({ xys: calc(x, y) })
                           }
-                          size={avatarSize}
-                        />
-                        <div>
-                          <CheckableTag
-                            style={{
-                              color: "white",
-                              fontSize: "17px",
-                              marginTop: "5px",
+                          onMouseLeave={() => setTran({ xys: [0, 0, 1] })}
+                          style={{ transform: tran.xys.interpolate(trans) }}
+                        >
+                          <Avatar
+                            className={{
+                              avatarItem: true,
+                              avatarItemSelect: type === item2.id,
                             }}
-                            checked={type === item2.id}
-                          >
-                            {item2.name}
-                          </CheckableTag>
-                        </div>
-                      </animated.div>
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </Carousel>
+                            onClick={() => {
+                              setType(item2.id);
+                            }}
+                            src={item2.logo_img
+                            }
+                            size={avatarSize}
+                            alt="T"
+                          />
+                          <div>
+                            <CheckableTag
+                              style={{
+                                color: "white",
+                                fontSize: "17px",
+                                marginTop: "5px",
+                              }}
+                              checked={type === item2.id}
+                            >
+                              {item2.name}
+                            </CheckableTag>
+                          </div>
+                        </animated.div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </Carousel>
+          </Skeleton>
         </animated.div>
       </div>
     </PageWrap>

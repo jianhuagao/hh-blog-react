@@ -5,3 +5,18 @@ export function getBlogTypes() {
     url: '/blogType'
   })
 }
+
+export function getBlogList(type) {
+  return request({
+    url: '/blog',
+    params: {
+      type
+    }
+  })
+}
+
+export function getBlog(id) {
+  return request({
+    url: `/blog/${id}`
+  })
+}
