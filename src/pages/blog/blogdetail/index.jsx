@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from "react";
-import { Card, Drawer,Button } from "antd";
+import { Card, Drawer, Button,Skeleton } from "antd";
 import { BarsOutlined } from "@ant-design/icons";
 import classnames from "classnames";
 import { useParams } from "react-router-dom";
@@ -15,7 +15,6 @@ import ReactMarkdown from "react-markdown";
 import { useFromRight } from "@/hooks/animation";
 
 export default memo(function Blogdetail() {
-
   const [drawerVis, setDrawerVis] = useState(false);
   const [rightShow, setRightShow] = useState(true);
   const { id } = useParams();
@@ -23,7 +22,14 @@ export default memo(function Blogdetail() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBlogAction(id));
-  }, [dispatch,id]);
+  }, [dispatch, id]);
+
+  const { blogContentLoading } = useSelector(
+    (state) => ({
+      blogContentLoading: state.getIn(["blog", "blogContentLoading"]),
+    }),
+    shallowEqual
+  );
 
   const { blog } = useSelector(
     (state) => ({
@@ -39,13 +45,15 @@ export default memo(function Blogdetail() {
     <BlogdetailWrap>
       <animated.div className="page" style={useFromRight()}>
         <div className="header">
-          <Header blog={blog}/>
+          <Header blog={blog} />
         </div>
         <div className="contents">
           <div className={classnames({ left: true, "left-pc": rightShow })}>
             <Card>
               <div className="reactMarkdown">
-                <ReactMarkdown>{blog.content}</ReactMarkdown>
+                <Skeleton avatar active paragraph={{ rows: 4 }} loading={blogContentLoading}>
+                  <ReactMarkdown>{blog.content}</ReactMarkdown>
+                </Skeleton>
               </div>
             </Card>
             <Card>

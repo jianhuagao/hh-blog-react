@@ -28,7 +28,7 @@ export default memo(function Banner() {
     <PageWrap>
       <animated.div style={useFromRight()}>
         <div className="page">
-          <Skeleton loading={!banners[0]}>
+          <Skeleton active loading={!banners[0]}>
             <div className="left">
               <Title>{banners[0] && banners[0].title}</Title>
               <Paragraph
@@ -46,7 +46,7 @@ export default memo(function Banner() {
               </Button>
             </div>
             <div className="right">
-              <Image width={400} src={banners[0] && banners[0].img} />
+              <Image preview={false} width={400} src={banners[0] && banners[0].img} />
             </div>
           </Skeleton>
         </div>

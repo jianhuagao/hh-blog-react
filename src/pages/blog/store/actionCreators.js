@@ -35,12 +35,10 @@ export const getBlogListAction = (type) => {
   }
 }
 
-const changeBlogAction = (res) => {
-  return {
-    type: action.CHANGE_BLOG,
-    blog: res
-  }
-}
+const changeBlogAction = (res) => ({
+  type: action.CHANGE_BLOG,
+  blog: res
+})
 
 export const getBlogAction = (id) => {
   return dispatch => {
@@ -48,4 +46,18 @@ export const getBlogAction = (id) => {
       dispatch(changeBlogAction(res))
     })
   }
+}
+
+export const changeBlogLoadingAction = (status) => {
+  return dispatch => dispatch({
+    type: action.CHANGE_BLOGLOADING,
+    blogLoading: status
+  })
+}
+
+export const changeBlogContentLoadingAction = (status) => {
+  return dispatch => dispatch({
+    type: action.CHANGE_BLOGCONTENTLOADING,
+    blogContentLoading: status
+  })
 }

@@ -70,7 +70,7 @@ export default memo(function HomeShow(props) {
           }}
         />
         <animated.div style={useFromRight()}>
-          <Skeleton loading={!blogTypes.count}>
+          <Skeleton active loading={!blogTypes.count}>
             <Carousel ref={CarouselRef}>
               {pArr.map((item, index) => {
                 return (

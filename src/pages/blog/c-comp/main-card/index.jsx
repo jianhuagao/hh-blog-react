@@ -51,7 +51,7 @@ export default memo(function Blog(props) {
             />
             <Divider />
             <animated.div style={useFromRight()}>
-              <Skeleton loading={!blogList.rows}>
+              <Skeleton active loading={!blogList.rows}>
                 <CoverCard
                   data={blogList.rows}
                   history={history}

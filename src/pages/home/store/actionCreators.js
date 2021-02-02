@@ -1,6 +1,7 @@
 import * as action from './constants'
 import {
-  getBanners
+  getBanners,
+  getAreas
 } from '@/service/home'
 
 const changeTopBannersAction = (res) => {
@@ -14,6 +15,22 @@ export const getTopBannersAction = () => {
   return dispatch => {
     getBanners().then(res => {
       dispatch(changeTopBannersAction(res))
+    })
+  }
+}
+
+
+const changeAreasAction = (res) => {
+  return {
+    type: action.CHANGE_AREAS,
+    areas: res.rows
+  }
+}
+
+export const getAreasAction = () => {
+  return dispatch => {
+    getAreas().then(res => {
+      dispatch(changeAreasAction(res))
     })
   }
 }

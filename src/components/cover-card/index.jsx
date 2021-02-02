@@ -1,9 +1,13 @@
 import React, { memo } from "react";
+import { useSelector, shallowEqual } from "react-redux";
 import { PageWrap } from "./style";
 import { List, Avatar, Space } from "antd";
 import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
 
 export default memo(function CoverCard({ data, history }) {
+  const { blogLoading } = useSelector(state=>({
+    blogLoading:state.getIn(["blog","blogLoading"])
+  }), shallowEqual);
   const IconText = ({ icon, text }) => (
     <Space>
       {React.createElement(icon)}
@@ -13,6 +17,7 @@ export default memo(function CoverCard({ data, history }) {
   return (
     <PageWrap>
       <List
+        loading={blogLoading}
         dataSource={data}
         itemLayout="vertical"
         size="large"
@@ -54,11 +59,11 @@ export default memo(function CoverCard({ data, history }) {
             extra={<img width={272} alt="logo" src={item.showimg} />}
           >
             <List.Item.Meta
-              avatar={<Avatar src={item.avatar} />}
+              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
               title={item.title}
               description={item.udate}
             />
-            {item.content}
+            {item.resume}
           </List.Item>
         )}
       />

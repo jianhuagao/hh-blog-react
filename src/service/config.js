@@ -7,4 +7,4 @@ const proBaseURL = "https://api.gaojianhua.top/api/v1";
 export const BASE_URL = process.env.NODE_ENV === 'development' ? devBaseURL : proBaseURL;
 
 //超时配置
-export const TIMEOUT = 5000;
+export const TIMEOUT = 30000;
