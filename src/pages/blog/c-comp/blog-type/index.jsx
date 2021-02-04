@@ -1,14 +1,10 @@
 import React, { memo, useRef, useEffect } from "react";
-import {
-  Typography,
-  Carousel,
-  Avatar,
-  Button,
-  Tag,
-  Skeleton,
-} from "antd";
+import { Typography, Carousel, Avatar, Button, Tag, Skeleton } from "antd";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
-import { getBlogTypesAction } from "../../store/actionCreators";
+import {
+  getBlogTypesAction,
+  changeSelectBlogTypeAction,
+} from "../../store/actionCreators";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { PageWrap } from "./style";
 import { animated } from "react-spring";
@@ -19,7 +15,6 @@ const { CheckableTag } = Tag;
 
 export default memo(function HomeShow(props) {
   //hooks
-  const { type, setType } = props.data;
   const typeNum = window.innerWidth < 620 ? 4 : 5;
   const CarouselRef = useRef();
   const dispatch = useDispatch();
@@ -33,7 +28,19 @@ export default memo(function HomeShow(props) {
     }),
     shallowEqual
   );
-
+  useEffect(() => {
+    const { rows } = blogTypes;
+    if (rows) {
+      dispatch(changeSelectBlogTypeAction(rows[0] && rows[0].id));
+    }
+  }, [blogTypes, dispatch]);
+  
+  const { selectBlogType } = useSelector(
+    (state) => ({
+      selectBlogType: state.getIn(["blog", "selectBlogType"]),
+    }),
+    shallowEqual
+  );
   const avatarSize = {
     xs: 60,
     sm: 70,
@@ -91,13 +98,12 @@ export default memo(function HomeShow(props) {
                           <Avatar
                             className={{
                               avatarItem: true,
-                              avatarItemSelect: type === item2.id,
+                              avatarItemSelect: selectBlogType === item2.id,
                             }}
                             onClick={() => {
-                              setType(item2.id);
+                              dispatch(changeSelectBlogTypeAction(item2.id));
                             }}
-                            src={item2.logo_img
-                            }
+                            src={item2.logo_img}
                             size={avatarSize}
                             alt="T"
                           />
@@ -108,7 +114,7 @@ export default memo(function HomeShow(props) {
                                 fontSize: "17px",
                                 marginTop: "5px",
                               }}
-                              checked={type === item2.id}
+                              checked={selectBlogType === item2.id}
                             >
                               {item2.name}
                             </CheckableTag>

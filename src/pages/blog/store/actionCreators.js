@@ -61,3 +61,10 @@ export const changeBlogContentLoadingAction = (status) => {
     blogContentLoading: status
   })
 }
+
+export const changeSelectBlogTypeAction = (status) => {
+  return dispatch => dispatch({
+    type: action.CHANGE_SELECTBLOGTYPE,
+    selectBlogType: status
+  })
+}

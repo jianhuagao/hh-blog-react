@@ -6,6 +6,7 @@ const defaultState = Map({
   blog: [],
   blogLoading: false,
   blogContentLoading: false,
+  selectBlogType: null
 })
 function reducer(state = defaultState, actions) {
   switch (actions.type) {
@@ -19,6 +20,8 @@ function reducer(state = defaultState, actions) {
       return state.set("blogLoading", actions.blogLoading)
     case Type.CHANGE_BLOGCONTENTLOADING:
       return state.set("blogContentLoading", actions.blogContentLoading)
+    case Type.CHANGE_SELECTBLOGTYPE:
+      return state.set("selectBlogType", actions.selectBlogType)
     default:
       return state
   }
