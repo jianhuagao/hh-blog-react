@@ -12,7 +12,7 @@ export const BlogdetailWrap = styled.div`
     border: 1px solid rgb(235, 237, 240);
   }
   .contents{
-    display:flex; 
+    /* display:flex;  */
     /* flex-wrap:wrap;*/
     /* justify-content:space-evenly; */
   }
@@ -21,13 +21,13 @@ export const BlogdetailWrap = styled.div`
       margin:0px 20px;
     }
   }
-  .left-pc{
+  /* .left-pc{
     width:70%;
   }
   .right{
     width:30%;
     flex-grow:1;
-  } 
+  }  */
   .comment{
     background-color:white;
   }
