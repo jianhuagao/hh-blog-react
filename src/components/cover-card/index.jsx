@@ -59,7 +59,7 @@ export default memo(function CoverCard({ data, history }) {
             extra={<img width={272} alt="logo" src={item.showimg} />}
           >
             <List.Item.Meta
-              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
+              avatar={<Avatar src="https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg"/>}
               title={item.title}
               description={item.udate}
             />

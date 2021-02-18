@@ -8,7 +8,7 @@ export default memo(function Footer(props) {
       <div className="left">
         <Avatar
           size={30}
-          src="https://himg.bdimg.com/sys/portraitn/item/b566d1f3d0a1f6cf159b"
+          src="https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg"
         />
         <Divider type="vertical" style={{ fontSize: 30, color: "#999999" }} />
         <span style={{ color: " rgb(255, 255, 255)" }}>❤</span>

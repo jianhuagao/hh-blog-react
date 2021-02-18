@@ -10,7 +10,7 @@ export default memo(function BlogHeader({blog}) {
           title={blog && blog.title}
           subTitle="2021年1月20日"
           tags={<Tag color="blue">原创</Tag>}
-          avatar={{ src: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' }}
+          avatar={{ src: 'https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg' }}
           
         >
           <Button type="text" size="small" icon={<LikeTwoTone />} >点赞(73)</Button>
