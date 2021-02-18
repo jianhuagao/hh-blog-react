@@ -11,20 +11,18 @@
 1.在根目录 `yarn install` or  `npm install`\
 2.执行  `yarn start` or  `npm run start`
 
-# 技术栈
 使用Flex进行布局\
-配置路径别名使用: carco\
-路由使用react-router来管理\
+webpack配置使用: carco\
+路由使用react-router\
 使用react-router-config集中式路径映射表管理\
-使用styled-components+普通的css编写样式\
+使用styled-components编写样式\
 使用axios发送网络请求\
-项目全面拥抱React Hooks\
+React Hooks\
 项目组件库使用: ant design\
-使用immutable对项目reducer中state进行管理\
-使用redux-immtable对根目录reducer中state进行管理\
+使用immutable对项目state进行管理\
 项目使用redux-thunk中间件\
 使用propType校验props类型及默认值\
-使用motion.ant.design添加过渡动画效果\
+使用react spring添加过渡动画效果\
 项目中的优化: 函数式组件全部采用memo、路由懒加载、函数防抖
 # 文件目录
 │─src\
