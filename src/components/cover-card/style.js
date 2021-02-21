@@ -5,6 +5,9 @@ export const PageWrap = styled.div`
       transition: all 0.3s ease;
       border-radius:8px;
       cursor: pointer;
+      img{
+        border-radius: 6px;
+      }
     }
     .list:hover {
       transform: scale(1.02);

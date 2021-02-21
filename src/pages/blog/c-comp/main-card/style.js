@@ -7,7 +7,7 @@ export const PageWrap = styled.div`
     box-shadow: 0px 11px 56px rgba(100,100,136,0.15);
     position:relative;
     top:-100px;
-    
+    border-radius: 6px;
     .contentCardChi{
     }
   }

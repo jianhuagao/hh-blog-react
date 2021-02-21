@@ -16,6 +16,7 @@ export const PageWrap = styled.div`
         align-items:center;
         img{
           box-shadow: rgba(0,0,0,0.12) 1px 0px 40px 0px;
+          border-radius: 6px;
         }
       }
     }
