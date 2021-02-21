@@ -11,23 +11,6 @@ export const BlogdetailWrap = styled.div`
     background-color:white;
     border: 1px solid rgb(235, 237, 240);
   }
-  .contents{
-    display:flex; 
-    /* flex-wrap:wrap;*/
-    /* justify-content:space-evenly; */
-  }
-  .left{
-    .reactMarkdown{
-      margin:0px 20px;
-    }
-  }
-  .left-pc{
-    width:70%;
-  }
-  .right{
-    width:30%;
-    flex-grow:1;
-  } 
   .comment{
     background-color:white;
   }

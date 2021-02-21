@@ -28,7 +28,7 @@ export default memo(function TopMenu() {
           <Avatar
             size={44}
             icon={<UserOutlined />}
-            src="https://himg.bdimg.com/sys/portraitn/item/b566d1f3d0a1f6cf159b"
+            src="https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg"
           />
           <Divider type="vertical" style={{ fontSize: 30 }} />
           <span>Happy hacking Blog</span>

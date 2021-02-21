@@ -7,17 +7,17 @@ export default memo(function Comment({children}) {
     <CommentWrap>
       <Comm
         actions={[<span key="comment-nested-reply-to">Reply to</span>]}
-        author={<a href="#/">Han Solo</a>}
+        author={<a href="#/">Jianhua Gao</a>}
         avatar={
           <Avatar
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            src="https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg"
             alt="Han Solo"
           />
         }
         content={
           <p>
-            We supply a series of design principles, practical patterns and high
-            quality design resources (Sketch and Axure).
+            You can now view hh-blog in the browser. Note that the development build is not optimized.
+To create a production build, use yarn build.(yarn or npm).
           </p>
         }
       >

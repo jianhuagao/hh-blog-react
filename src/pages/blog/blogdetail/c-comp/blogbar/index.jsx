@@ -42,10 +42,11 @@ export default memo(function BlogBar(props) {
             <List.Item>
               <List.Item.Meta
                 avatar={
-                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                  <Avatar src="https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg" />
                 }
                 title={<a href="#/Blog">{item.title}</a>}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                description="Note that the development build is not optimized.
+                To create a production build, use yarn build."
               />
             </List.Item>
           )}

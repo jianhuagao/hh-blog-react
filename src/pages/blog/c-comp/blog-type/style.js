@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const PageWrap = styled.div`
   background-color:#3d6fd3;
-  background:url(${require("@/assets/img/bluebg.png").default})  no-repeat  34% 19%;
+  background:url(${require("@/assets/img/bluebg.png").default})  no-repeat  24% 19%;
   padding:70px 0px;
   .ant-skeleton {
     padding: 20px;
