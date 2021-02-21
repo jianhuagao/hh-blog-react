@@ -47,7 +47,7 @@ export default memo(function Blogdetail() {
           <Row>
             <Col  xs={24} sm={24} md={17} lg={17} xl={17}>
               <div className="left">
-                <Card>
+                <Card bordered={false}>
                   <div className="reactMarkdown">
                     <Skeleton
                       avatar
@@ -67,7 +67,7 @@ export default memo(function Blogdetail() {
                     </Skeleton>
                   </div>
                 </Card>
-                <Card>
+                <Card bordered={false}>
                   <div className="ant-descriptions-title">评论</div>
                   <Comment>
                     <Comment>
@@ -82,7 +82,7 @@ export default memo(function Blogdetail() {
             </Col>
             <Col  xs={0} sm={0} md={7} lg={7} xl={7}>
               <div className="right">
-                <Card>
+                <Card bordered={false}>
                   <BlogBar />
                 </Card>
               </div>

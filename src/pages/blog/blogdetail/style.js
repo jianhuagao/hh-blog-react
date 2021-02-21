@@ -6,10 +6,17 @@ export const BlogdetailWrap = styled.div`
   margin-top:76px;
   .page{
     padding:20px;
+    .contents{
+      .ant-card{
+        margin:10px;
+        border-radius:12px;
+      }
+    }
   }
   .header{
     background-color:white;
-    border: 1px solid rgb(235, 237, 240);
+    border-radius:12px;
+    margin:0px 10px 0px 10px;
   }
   .comment{
     background-color:white;
@@ -19,6 +26,7 @@ export const BlogdetailWrap = styled.div`
     top:20%;
     right:0px;
     background-color:white;
+    border-radius: 25px;
     box-shadow: -6px 8px 16px 0 rgba(28,31,33,.1);
   }
 `
