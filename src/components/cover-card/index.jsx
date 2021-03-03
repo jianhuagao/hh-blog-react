@@ -1,13 +1,24 @@
 import React, { memo } from "react";
 import { useSelector, shallowEqual } from "react-redux";
 import { PageWrap } from "./style";
-import { List, Avatar, Space } from "antd";
-import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
+import { List, Avatar, Space, Tooltip } from "antd";
+import {
+  MessageOutlined,
+  LikeOutlined,
+  HeartOutlined,
+} from "@ant-design/icons";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import zhcn from "dayjs/locale/zh-cn";
+const dayjsfor = dayjs.extend(relativeTime);
 
 export default memo(function CoverCard({ data, history }) {
-  const { blogLoading } = useSelector(state=>({
-    blogLoading:state.getIn(["blog","blogLoading"])
-  }), shallowEqual);
+  const { blogLoading } = useSelector(
+    (state) => ({
+      blogLoading: state.getIn(["blog", "blogLoading"]),
+    }),
+    shallowEqual
+  );
   const IconText = ({ icon, text }) => (
     <Space>
       {React.createElement(icon)}
@@ -41,13 +52,13 @@ export default memo(function CoverCard({ data, history }) {
             key={item.title}
             actions={[
               <IconText
-                icon={StarOutlined}
+                icon={LikeOutlined}
                 text={item.good}
                 key="list-vertical-star-o"
               />,
               <IconText
-                icon={LikeOutlined}
-                text="156"
+                icon={HeartOutlined}
+                text={item.read}
                 key="list-vertical-like-o"
               />,
               <IconText
@@ -56,12 +67,22 @@ export default memo(function CoverCard({ data, history }) {
                 key="list-vertical-message"
               />,
             ]}
-            extra={<img width={272} alt="logo" src={item.showimg} />}
+            extra={
+              <img width={272} height={180} alt="logo" src={item.showimg} />
+            }
           >
             <List.Item.Meta
-              avatar={<Avatar src="https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg"/>}
+              avatar={
+                <Avatar src="https://api.gaojianhua.top/api/v1/img/8dd3e5d1ea095b5c514fd39a77c06567/image/jpeg" />
+              }
               title={item.title}
-              description={item.udate}
+              description={
+                <Tooltip
+                  title={dayjs(item.udate).format("YYYY-MM-DD HH:mm:ss")}
+                >
+                  <span>{dayjsfor(item.udate).locale(zhcn).toNow()}</span>
+                </Tooltip>
+              }
             />
             {item.resume}
           </List.Item>

@@ -8,7 +8,7 @@ export const BlogdetailWrap = styled.div`
     padding:20px;
     .contents{
       .ant-card{
-        margin:10px;
+        margin:5px;
         border-radius:12px;
       }
     }
@@ -16,7 +16,7 @@ export const BlogdetailWrap = styled.div`
   .header{
     background-color:white;
     border-radius:12px;
-    margin:0px 10px 0px 10px;
+    margin:5px 5px;
   }
   .comment{
     background-color:white;
